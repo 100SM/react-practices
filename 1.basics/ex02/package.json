@@ -10,9 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "fund": "^1.0.0"
-  },
   "devDependencies": {
     "express": "^4.17.3"
   }
