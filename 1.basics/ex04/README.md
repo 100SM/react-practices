@@ -11,3 +11,6 @@
 ##### 5) bundling
 #### 5. JavaScript 뿐만 아니라 다양한 assets(image, css, font)들도 module로 취급
 #### 6. 설치
+##### $ npm i -D webpack webpack-cli
+##### $ npm .\node_modules\.bin\webpack --version
+##### $ npx webpack --version
