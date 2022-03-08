@@ -14,3 +14,5 @@
 ##### $ npm i -D webpack webpack-cli
 ##### $ npm .\node_modules\.bin\webpack --version
 ##### $ npx webpack --version
+#### 7. package.json scripting("build" stage)
+#### 8. $ npm run build
