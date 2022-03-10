@@ -20,7 +20,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
+        test: /\.(png|git|jpe?g|svg|ico|tiff?|bmp)$/i,
         type: "asset/resource",
       },
     ],
