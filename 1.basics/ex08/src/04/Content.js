@@ -1,5 +1,13 @@
 import React from "react";
 
-export default function () {
-  return <p>JSX Tutorials - 함수 컴포넌트 만들기</p>;
+function content() {
+  /**
+  return (
+  <div>JSX Tutorials - Pure React(React API)로 컴포넌트 작성</div>
+  );
+   */
+
+  return React.createElement("p", null, "JSX Tutorials - Pure React(React API)로 컴포넌트 작성");
 }
+
+export default content;
