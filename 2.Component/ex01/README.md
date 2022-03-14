@@ -23,7 +23,7 @@
     babel.config.json
     webpack.config.json
 
-스크립트 추가하기
+npm 스크립팅
 
 ```javascript
 "scripts": {
