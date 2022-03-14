@@ -2,8 +2,11 @@
 
 1.  Inline Styling
 2.  Normal CSS(css-loader options: {module: false})
+    - $ npm run debug src=02 css-modules=false
 3.  Normal CSS(css-loader options: {module: true})
+    - $ npm run debug src=03 css-modules=true
 4.  CSS Module(css-loader options: {module: true})
+    - $ npm run debug src=04 css-modules=true
 5.  SACC & SCSS
 6.
 7.
@@ -29,4 +32,4 @@
 
 12. 실행
 
-    $ npm run debug src={01|02|03|04|...}
+    $ npm run debug src={01|02|03|04|...} css.modules={[true]|false}
