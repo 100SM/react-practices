@@ -1,13 +1,12 @@
 {
-  "name": "ex01",
+  "name": "kanbanboard",
   "version": "1.0.0",
-  "description": "ex01: Property",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "debug": "npx webpack serve --progress --mode development",
-    "build": "npx webpack"
+        "debug": "npx webpack serve --progress --config config/webpack.config.js --mode development",
+        "build": "npx webpack"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
