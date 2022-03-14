@@ -9,25 +9,26 @@ export default class App extends Component {
       {
         no: 1,
         name: "Bread",
-        quantity: 10,
+        quantity: 40,
       },
       {
         no: 2,
         name: "Egg",
-        quantity: 20,
+        quantity: 80,
       },
       {
         no: 3,
         name: "Milk",
-        quantity: 5,
+        quantity: 50,
       },
     ];
   }
+
   render() {
     return (
-      <ul id="App">
-        <FoodListItem foods={this.foods} />
-      </ul>
+      <div id="App">
+        <FoodList foods={this.foods} />
+      </div>
     );
   }
 }
