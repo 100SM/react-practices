@@ -22,26 +22,26 @@
 
 ### 7. React Awesome: Working with UI II
 
-### 8.
+---
 
-9.  설치
+1.  설치
 
     $ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react react react-dom
 
-10. 설정
+2.  설정
 
     babel.config.json
     webpack.config.json
 
-11. npm 스크립팅
+3.  npm 스크립팅
 
 ```javascript
 "scripts": {
-"debug": "npx webpack serve --progress --mode development --env",
-"build": "npx webpack"
-},
+    "debug": "npx webpack serve --config config/webpack.config.js --progress --mode development --env",
+    "build": "npx webpack"
+  },
 ```
 
-12. 실행
+4. 실행
 
-    $ npm run debug src={01|02|03|04|...} css.modules={[true]|false}
+   $ npm run debug src={01|02|03|04|...} css.modules={[true]|false}
