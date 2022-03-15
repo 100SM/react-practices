@@ -1,7 +1,7 @@
 import React from "react";
 import CardList from "./CardList";
 
-import "../public/styles.css";
+import "./assets/css/styles.css";
 
 const App = () => {
   const data = require("../public/data.json");
