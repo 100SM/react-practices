@@ -1,17 +1,17 @@
-import React from 'react';
-import styles from './assets/css/TaskList.css';
-import Task from './Task';
+import React from "react";
+import styles from "./assets/css/TaskList.css";
+import Task from "./Task";
 
-const TaskList = ({tasks}) => {
+const TaskList = ({ tasks }) => {
   return (
     <div className={styles.TaskList}>
-        <ul>
-            {tasks.map(task => <Task
-                                    key={task.no}
-                                    name={task.name} /> )}
-        </ul>
-    </div>     
+      <ul>
+        {tasks.map((task) => (
+          <Task key={task.no} name={task.name} />
+        ))}
+      </ul>
+    </div>
   );
-}
+};
 
-export default TaskList
+export default TaskList;
