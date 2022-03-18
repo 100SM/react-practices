@@ -17,8 +17,7 @@ export default function Form() {
   };
   const onChangeInputEmail = (e) => {
     setEmail(e.target.value);
-    const re =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     setValidEmail(re.test(e.target.value));
   };
 
@@ -43,12 +42,12 @@ export default function Form() {
       {email === "" ? null : validEmail ? (
         <FontAwesomeIcon
           icon={faCheckCircle}
-          style={{ fontSize: 16, color: "blue" }}
+          style={{ fontSize: 16, color: "blue", marginLeft: 5 }}
         />
       ) : (
         <FontAwesomeIcon
           icon={faTimesCircle}
-          style={{ fontSize: 16, color: "red" }}
+          style={{ fontSize: 16, color: "red", marginLeft: 5 }}
         />
       )}
       <label htmlFor="password">패스워드</label>

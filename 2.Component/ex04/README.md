@@ -16,8 +16,12 @@
 
 ### 02. 제어 컴포넌트
 
-    src/02 - 제어 컴포넌트
-    src/03 - 비제어 컴포넌트
+    1. input, textarea, option과 같은 form component 중에 사용자 입력에 따라서 state값이 변경되고 rendering하는 component를 제어 component라 함
+    2.
+    3.
+    4. 예제
+        - src/02 - 제어 컴포넌트
+        - src/03 - 비제어 컴포넌트
 
 ### 03. 상태(Stateful) 컴포넌트 vs 순수(Pure, Dumb) 컴포넌트
 
