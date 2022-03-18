@@ -17,14 +17,26 @@
 ### 02. 제어 컴포넌트
 
     1. input, textarea, option과 같은 form component 중에 사용자 입력에 따라서 state값이 변경되고 rendering하는 component를 제어 component라 함
-    2.
-    3.
+    2. form component를 제어 component로 만드는 것은 조금 복잡해 보이지만 다음과 같은 장점이 있음
+        - component의 interface를 외부에서 변경할 수 없고 내부의 상태 변경으로 가능하다는 것은 react component의 작성원칙을 준수할 수 있음
+        - 사용자 입력 값에 대한 validation 가능
+    3. form component를 반드시 제어 component로 작성해야 하는 것은 아님. 상태를 제어하지 않는 비제어(Uncontrolled) component로 만들 수 있음
     4. 예제
         - src/02 - 제어 컴포넌트
         - src/03 - 비제어 컴포넌트
 
 ### 03. 상태(Stateful) 컴포넌트 vs 순수(Pure, Dumb) 컴포넌트
 
+    1. 상태 컴포넌트
+        - 상태를 관리하는 컴포넌트
+        - 보통 상태 컴포넌트는 컴포넌트 계층에서 상위에 있음
+        - 상태 컴포넌트는 순수 컴포넌트를 하나 이상 래핑 가능
+    2. 순수 컴포넌트
+        - 상태관리 없이 속성(props)로 화면만 렌더링하는 컴포넌트
+        - 재사용성 좋음. 테스트하기도 좋음
+    3. application의 컴포넌트들은 상태 컴포넌트와 순수 컴포넌트로 분리하여 만드는 것이 좋음
+    4. 어떤 컴포넌트가 상태 컴포넌트인가?
+    5. 예제
     emaillist
 
 ### 04. Data Flow(Bottom -> Up)
