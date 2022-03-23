@@ -15,24 +15,21 @@
         - * componentDidUpdate: DOM 업데이트가 끝난 직후 호출. DOM 작업이 가능
     3) Lifecycle III: Unmount
         - * componentWillUnmount: 컴포넌트를 DOM에서 제거하기 전
+    4) 예제
+        - src/01
 
-### 02. Alternative(대용): Functional Component Lifecycle: useEffect Hook
+### 02. Alternative(대용): Functional Component Lifecycle: useEffect Hook 사용
 
-### 03. 상태(Stateful) 컴포넌트 vs 순수(Pure, Dumb) 컴포넌트
+    1) Alternative 01: getDerivedStateFromProps
+    2) After Rendering 함수
+    3) 어떤 특정 상태의 변화에 반응하는 After Rendering 함수
+    3) Alternative 02: componentDidMount & componentWillUnmount
+    5) 예제
+        - src/02
 
-    1. 상태 컴포넌트
-        - 상태를 관리하는 컴포넌트
-        - 보통 상태 컴포넌트는 컴포넌트 계층에서 상위에 있음
-        - 상태 컴포넌트는 순수 컴포넌트를 하나 이상 래핑 가능
-    2. 순수 컴포넌트
-        - 상태관리 없이 속성(props)로 화면만 렌더링하는 컴포넌트
-        - 재사용성 좋음. 테스트하기도 좋음
-    3. application의 컴포넌트들은 상태 컴포넌트와 순수 컴포넌트로 분리하여 만드는 것이 좋음
-    4. 어떤 컴포넌트가 상태 컴포넌트인가?
-    5. 예제
-    emaillist
+### 03. Clock Component(Class Component Lifecycle 이용): src/03
 
-### 04. Data Flow(Bottom -> Up)
+### 04. Clock Component(useEffect Hook 이용): src/04 [과제]
 
     emaillist
 
