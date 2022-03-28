@@ -60,3 +60,12 @@ server:
       encoding:
          charset: UTF-8
          enabled: true
+         
+---
+# logging
+logging:
+   pattern:
+      console:
+      file:
+   level:
+      root: WARN
