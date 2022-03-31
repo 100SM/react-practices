@@ -1,34 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="task">
-
-	<select id="findAll" resultType="taskvo" parameterType="string">
-		<choose>
-			<when test="keyword == null or keyword == ''">
-				<![CDATA[	
-		    		  select no, name, done, card_no
-		      		    from task
-		  		    order by no desc
-	  			]]>	
-			</when>
-			<otherwise>
-				<![CDATA[
-		    		select no, name, done, card_no
-		      		  from task
-		     		 where name like '%${keyword}%'
-		        		or done like '%${keyword}%'
-		        		or card_no like '%${keyword}%' 
-		  		  order by no desc
-	  			]]>	
-			</otherwise>
-		</choose>	
+	<select id="findAllByCardNo" resultType="taskvo" parameterType="long">
+		<![CDATA[	
+			  select no, name, done
+		      	from task
+		       where card_no=#{cardNo}	
+		  	order by no desc
+	  	]]>	
 	</select>
 	
 	<insert id="insert" parameterType="taskvo">
 		<![CDATA[
 			insert
 			  into task 
-			values (null, #{name}, #{done}, #{card_no})	
+			values (null, #{name}, #{done}, #{cardNo})	
 	  	]]>
 	  	<selectKey keyProperty="no" resultType="long" order="AFTER">
 			<![CDATA[
@@ -36,5 +22,13 @@
 	  		]]>
 	  	</selectKey>	
 	</insert>
-	
+
+	<update id="updateDone" parameterType="map">
+		<![CDATA[
+			update task 
+			   set done=#{done}
+			 where no=#{no}	
+	  	]]>	
+	</update>	
+		
 </mapper>

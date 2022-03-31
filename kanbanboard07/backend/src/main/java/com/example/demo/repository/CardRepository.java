@@ -10,15 +10,10 @@ import com.example.demo.vo.CardVo;
 
 @Repository
 public class CardRepository {
-	
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<CardVo> findAll(String keyword) {
-		return sqlSession.selectList("card.findAll", keyword);
-	}
-	
-	public Boolean insert(CardVo vo) {
-		return sqlSession.insert("card.insert", vo) == 1;		
+	public List<CardVo> findAll() {
+		return sqlSession.selectList("card.findAll");
 	}
 }

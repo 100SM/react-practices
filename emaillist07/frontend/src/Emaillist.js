@@ -1,7 +1,7 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styles from "./assets/scss/Emaillist.scss";
 import Email from "./Email";
-import PropTypes from "prop-types";
 
 export default function Emaillist({ emails }) {
   return (

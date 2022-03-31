@@ -1,45 +1,33 @@
-import React, { useEffect, useState } from "react";
-import styles from "./assets/css/TaskList.css";
-import Task from "./Task";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Task from './Task';
+import styles from './assets/css/TaskList.css';
 
-const TaskList = ({ /*tasks*/ }) => {
-  const [tasks, setTasks] = useState([]);
-  useEffect(async () => {
-    try {
-      const response = await fetch("/api/task", {
-        method: "get",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: null,
-      });
+export default function TaskList({cardNo, tasks, notifyAddTask, notifyChangeTaskDone}) {
+    return (
+        <div className='TaskList'>
+            <ul>
+                {tasks.map(task => <Task
+                                        key={task.no}
+                                        no={task.no}
+                                        name={task.name} 
+                                        done={task.done}
+                                        notifyChangeTaskDone={notifyChangeTaskDone} />)}
+            </ul>
+            <input
+                type='text'
+                className={styles.TaskList__add_task}
+                placeholder='태스크 추가'
+                onKeyPress={(e) => {
+                    if (e.key === 'Enter') {
+                        notifyAddTask(e.target.value);
+                        e.target.value = '';
+                    }
+                }}/>
+        </div>
+    );
+}
 
-      if (!response.ok) {
-        throw new Error(`${response.status} ${response.statusText}`);
-      }
-
-      const json = await response.json();
-
-      if (json.result !== "success") {
-        throw new Error(`${json.result} ${json.message}`);
-      }
-
-      setTasks(json.data);
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
-
-  return (
-    <div className={styles.TaskList}>
-      <ul>
-        {tasks.map((task) => (
-          <Task key={task.no} name={task.name} done={task.done} />
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default TaskList;
+TaskList.propTypes = {
+    tasks: PropTypes.arrayOf(PropTypes.shape(Task.propTypes))
+}

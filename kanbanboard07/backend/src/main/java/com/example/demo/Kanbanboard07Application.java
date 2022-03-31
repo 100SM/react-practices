@@ -16,17 +16,16 @@ public class Kanbanboard07Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Kanbanboard07Application.class, args);
 	}
-
+	
 	@Bean
 	public ApplicationRunner scriptRunner() {
 		return new ApplicationRunner() {
 			@Autowired
 			private SqlSessionFactory sqlSessionFactory;
-
+			
 			@Override
 			public void run(ApplicationArguments args) throws Exception {
-				ScriptRunner scriptRunner = new ScriptRunner(
-						sqlSessionFactory.getConfiguration().getEnvironment().getDataSource().getConnection());
+				ScriptRunner scriptRunner = new ScriptRunner(sqlSessionFactory.getConfiguration().getEnvironment().getDataSource().getConnection());
 				scriptRunner.runScript(Resources.getResourceAsReader("sql/db-setup.sql"));
 			}
 		};

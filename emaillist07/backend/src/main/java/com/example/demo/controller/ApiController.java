@@ -16,22 +16,19 @@ import com.example.demo.vo.EmaillistVo;
 @RestController
 //@CrossOrigin(origins = {"http://localhost:9999"}, allowedHeaders = "*", allowCredentials="false", methods={RequestMethod.GET})
 public class ApiController {
-	
+
 	@Autowired
 	private EmaillistRepository emaillistRepository;
-	
+
 	@GetMapping("/api")
-	public ResponseEntity<JsonResult> read(@RequestParam(value="kw", required=true, defaultValue="") String keyword) {
-		return ResponseEntity
-				.status(HttpStatus.OK)
-				.body(JsonResult.success(emaillistRepository.findAll(keyword)));
+	public ResponseEntity<JsonResult> read(
+			@RequestParam(value = "kw", required = true, defaultValue = "") String keyword) {
+		return ResponseEntity.status(HttpStatus.OK).body(JsonResult.success(emaillistRepository.findAll(keyword)));
 	}
-	
+
 	@PostMapping("/api")
 	public ResponseEntity<JsonResult> create(@RequestBody EmaillistVo vo) {
 		emaillistRepository.insert(vo);
-		return ResponseEntity
-				.status(HttpStatus.OK)
-				.body(JsonResult.success(vo));
+		return ResponseEntity.status(HttpStatus.OK).body(JsonResult.success(vo));
 	}
 }
