@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
+import styles from "../assets/scss/component/Gallery.scss";
 import SiteLayout from "../layout/SiteLayout";
-import styles from '../assets/scss/component/Gallery.scss';
 
 export default function Gallery() {
-    return (
-        <SiteLayout>
-            <div className={styles.Gallery}>
-                <h2>Gallery</h2>
-            </div>
-        </SiteLayout>
-    );
+  return (
+    <SiteLayout>
+      <div className={styles.Gallery}>
+        <h2>Gallery</h2>
+      </div>
+    </SiteLayout>
+  );
 }
