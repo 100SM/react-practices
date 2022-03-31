@@ -4,5 +4,27 @@ import Gallery from "./component/Gallery";
 import Guestbook from "./component/Guestbook";
 
 export default function App() {
-  return <div>Hash Route 직접 만들어 보기</div>;
+  const [route, setRoute] = useState("");
+  const handlerChange = () => {
+    console.log(window.location.hash);
+    setRoute(window.location.hash.substring(1));
+  };
+  useEffect(() => {
+    window.addEventListener("hashchange", handlerChange);
+    return () => {
+      window.removeEventListener("hashchange", handlerChange);
+    };
+  });
+  return (function () {
+    switch (route) {
+      case "/":
+        return <Main />;
+      case "/guestbook":
+        return <Guestbook />;
+      case "/gallery":
+        return <Gallery />;
+      default:
+        return null;
+    }
+  })();
 }
