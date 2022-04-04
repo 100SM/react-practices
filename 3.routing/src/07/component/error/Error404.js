@@ -1,7 +1,7 @@
 import React from "react";
 import SiteLayout from "../../layout/SiteLayout";
 
-export default function Gallery() {
+export default function Error404() {
   window.location.href = "/";
   return (
     <SiteLayout>

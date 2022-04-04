@@ -12,7 +12,6 @@ import Join from "./component/user/Join";
 import Login from "./component/user/Login";
 import Settings from "./component/user/Settings";
 
-
 export default function App() {
   return (
     <Router>
